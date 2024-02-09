@@ -1,5 +1,5 @@
 import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
-import { set } from "mongoose";
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 function SignUp() {
@@ -105,7 +105,7 @@ function SignUp() {
               )}
             </Button>
           </form>
-          <div className="flex flex-row gap-4 text-sm mt-5">
+          <div className="flex flex-row gap-1 text-sm mt-5">
             <span>Have an Account?</span>
             <Link to="/sign-in" className="text-blue-500">
               Sign In
