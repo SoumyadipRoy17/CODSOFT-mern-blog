@@ -60,3 +60,58 @@ export const signin = async (req, res, next) => {
     next(error);
   }
 };
+
+export const google = async (req, res, next) => {
+  const { name, email, googlePhotoUrl } = req.body;
+  if (!name || !email || name === "" || email === "") {
+    next(errorHandler(400, "Please fill all the fields!"));
+  }
+  try {
+    const validUser = await User.findOne({ email });
+    if (!validUser) {
+      //user is not there in DB create a new user
+      const generatedPassword =
+        Math.random().toString(36).slice(-8) +
+        Math.random().toString(36).slice(-8);
+
+      const hashedPassword = bcryptjs.hashSync(generatedPassword, 10);
+      const newUser = new User({
+        username:
+          name.toLowerCase().split(" ").join("") +
+          Math.random().toString(9).slice(-4),
+        email,
+        password: hashedPassword,
+        profilePicture: googlePhotoUrl,
+      });
+      await newUser.save();
+      const token = jwt.sign(
+        { id: newUser._id, email: newUser.email },
+        process.env.JWT_SECRET,
+        { expiresIn: "1h" }
+      );
+      const { password: pass, ...rest } = newUser._doc;
+      res
+        .status(200)
+        .cookie("access_token", token, { httpOnly: true })
+        .json(rest);
+      res.json({ message: "Signup Successfull!" });
+    } else {
+      //user is there in DB
+      const token = jwt.sign(
+        { id: validUser._id, email: validUser.email },
+        process.env.JWT_SECRET,
+        { expiresIn: "1h" }
+      );
+
+      const { password: pass, ...rest } = validUser._doc;
+      res
+        .status(200)
+        .cookie("access_token", token, {
+          httpOnly: true,
+        })
+        .json(rest);
+    }
+  } catch (error) {
+    next(error);
+  }
+};
