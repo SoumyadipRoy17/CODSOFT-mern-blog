@@ -26,11 +26,14 @@ function OAuth() {
           googlePhotoUrl: resultsFromGoogle.user.photoURL,
         }),
       });
+
       const data = await res.json();
-      if (data.success === false) {
-        return dispatch(signInSuccess(data));
-      }
+      console.log(data);
+      // if (data.success === false) {
+      //   return
+      // }
       if (res.ok) {
+        dispatch(signInSuccess(data));
         navigate("/");
       }
     } catch (error) {
