@@ -107,6 +107,7 @@ function DashProfile() {
                     imageFileUploadingProgress / 100
                   })`,
                 },
+                pathTransitionDuration: 0.8,
               }}
             ></CircularProgressbar>
           )}
