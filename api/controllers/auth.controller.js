@@ -94,7 +94,7 @@ export const google = async (req, res, next) => {
         .status(200)
         .cookie("access_token", token, { httpOnly: true })
         .json(rest);
-      res.json({ message: "Signup Successfull!" });
+      // res.json({ message: "Signup Successfull!" });
     } else {
       //user is there in DB
       const token = jwt.sign(
