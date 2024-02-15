@@ -56,7 +56,6 @@ function DashSidebar() {
               <Sidebar.Item
                 active={tab === "posts"}
                 icon={HiDocumentText}
-                label={"Posts"}
                 labelColor="dark"
                 as="div"
               >
