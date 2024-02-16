@@ -57,7 +57,7 @@ function Header() {
       </Button>
       <div className="flex gap-2 md:order-2">
         <Button
-          className="w-12 h-10 hidden sm:inline"
+          className="w-12 h-10  sm:inline" //fixed a bug with the button not showing on small screens
           color="gray"
           gradientDuoTone="tealToLime"
           onClick={() => dispatch(toggleTheme())}
