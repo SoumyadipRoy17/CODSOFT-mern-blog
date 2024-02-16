@@ -12,8 +12,7 @@ function DashSidebar() {
   const newUser = useSelector((state) => state.user);
   const [tab, setTab] = useState("");
   const { currentUser } = newUser;
-  console.log(currentUser);
-  console.log(currentUser.isAdmin);
+
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
 
