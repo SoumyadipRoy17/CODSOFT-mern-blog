@@ -309,7 +309,7 @@ function DashProfile() {
               </Button>
               <Button
                 gradientDuoTone="pinkToOrange"
-                onClick={() => showModal(false)}
+                onClick={() => setShowModal(false)}
               >
                 No
               </Button>

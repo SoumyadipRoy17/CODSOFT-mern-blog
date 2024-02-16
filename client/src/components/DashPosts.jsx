@@ -112,7 +112,7 @@ function DashPosts() {
                         setShowModal(true);
                         setPostIdToDelete(post._id);
                       }}
-                      className="font-medium text-red-500 hover:underline"
+                      className="font-medium text-red-500 hover:underline cursor-pointer"
                     >
                       Delete
                     </span>
@@ -161,7 +161,7 @@ function DashPosts() {
               </Button>
               <Button
                 gradientDuoTone="pinkToOrange"
-                onClick={() => showModal(false)}
+                onClick={() => setShowModal(false)}
               >
                 No
               </Button>
