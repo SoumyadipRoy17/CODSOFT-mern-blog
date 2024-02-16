@@ -1,12 +1,15 @@
-import { Table } from "flowbite-react";
+import { Button, Modal, Table } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 function DashPosts() {
   const { currentUser } = useSelector((state) => state.user);
   const [userPosts, setUserPosts] = useState([]);
   const [showMore, setShowMore] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [postIdToDelete, setPostIdToDelete] = useState("");
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -39,6 +42,26 @@ function DashPosts() {
         if (data.posts.length < 9) {
           setShowMore(false);
         }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleDeletePost = async () => {
+    setShowModal(false);
+    try {
+      const res = await fetch(
+        `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      const data = await res.json();
+      if (!res.ok) {
+        setUserPosts((prev) =>
+          prev.filter((post) => post._id !== postIdToDelete)
+        );
       }
     } catch (error) {
       console.log(error);
@@ -84,7 +107,13 @@ function DashPosts() {
                   </Table.Cell>
                   <Table.Cell>{post.category}</Table.Cell>
                   <Table.Cell>
-                    <span className="font-medium text-red-500 hover:underline">
+                    <span
+                      onClick={() => {
+                        setShowModal(true);
+                        setPostIdToDelete(post._id);
+                      }}
+                      className="font-medium text-red-500 hover:underline"
+                    >
                       Delete
                     </span>
                   </Table.Cell>
@@ -112,6 +141,34 @@ function DashPosts() {
       ) : (
         <p>You have no posts yet</p>
       )}
+      <Modal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        popup
+        size="md"
+      >
+        <Modal.Header />
+        <Modal.Body>
+          <div className="text-center ">
+            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
+            <h3 className="mn-5 text-lg text-gray-500 dark:text-gray-400">
+              {" "}
+              Are you sure you want to delete this Post?
+            </h3>
+            <div className="flex gap-4 mt-4 justify-center">
+              <Button gradientDuoTone="tealToLime" onClick={handleDeletePost}>
+                Yes, I'm Sure
+              </Button>
+              <Button
+                gradientDuoTone="pinkToOrange"
+                onClick={() => showModal(false)}
+              >
+                No
+              </Button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }
