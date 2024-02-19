@@ -37,6 +37,6 @@ body {
   text-decoration: none;
 }
 
-.dark .post-content {
+.dark .post-content a {
   color: red;
 }
