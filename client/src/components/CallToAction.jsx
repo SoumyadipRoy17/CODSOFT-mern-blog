@@ -21,9 +21,10 @@ function CallToAction() {
           </a>
         </Button>
       </div>
-      <div className="p-7 flex-1">
+      <div className="p-7 flex-1 ">
         <img
-          src="https://d2ms8rpfqc4h24.cloudfront.net/top_javascript_development_tools_bb7222ea32.jpg"
+          className="border border-teal-500 rounded-xl w-full h-full object-cover"
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjh2i6AfQKADKjAK7jATMP8DZVhSLDOT5c0sXFvgmAH1DFFO5CTnYrzSZpt1l-VYGawPWN96nDl1UyntEc4ZefBEyOF_0ostTx7pDMbDJhFzPuft2pMAj85GObIR9hkU2YGnv9m8-WmSOgN0KfoRM6WERghtBmvT8Tvve_5k1ISNFJN57t8NXXC4KbCEvzt/w497-h243/Screenshot%202024-02-19%20182231.png"
           alt=""
         />
       </div>
