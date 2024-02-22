@@ -18,7 +18,6 @@ function PostCard({ post }) {
           className="z-10 group-hover:bottom-0 absolute bottom-[-200px] left-0 right-0 border border-emerald-500 text-emerald-500 hover:bg-teal-500 hover:text-white transition-all duration-300 text-center py-2 rounded-md !rounded-r w-full"
           color="tealToLime"
         >
-          {" "}
           Read Article
         </Link>
       </div>
