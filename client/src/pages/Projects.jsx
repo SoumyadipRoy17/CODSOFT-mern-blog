@@ -1,5 +1,15 @@
+import CallToAction from "../components/CallToAction";
 function Projects() {
-  return <div>Projects</div>;
+  return (
+    <div className="min-h-screen max-w-2xl mx-auto flex justify-center items-center flex-col gap-6 p-3">
+      <h1 className="text-3xl font-semibold">Projects</h1>
+      <p className="text-md text-gray-500">
+        Hi!! I am a Full Stack Developer and I love to work on different
+        projects . Here are few of them
+      </p>
+      <CallToAction />
+    </div>
+  );
 }
 
 export default Projects;
