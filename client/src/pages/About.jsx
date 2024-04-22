@@ -18,7 +18,7 @@ function About() {
               accessibility. The app is fully responsive and accessible on all
               devices.
             </p>
-            <p>Hope You Enjoyed reading my Blogs!</p>
+            <p>Hope you Enjoyed reading my Blogs!</p>
           </div>
         </div>
       </div>
