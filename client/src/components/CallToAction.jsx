@@ -14,6 +14,7 @@ function CallToAction() {
         >
           <a
             href="https://roys-space-portfolio.vercel.app/"
+            // href="https://roys-space-portfolio.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -24,7 +25,7 @@ function CallToAction() {
       <div className="p-7 flex-1 ">
         <img
           className="border border-teal-500 rounded-xl w-full h-full object-cover"
-          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjh2i6AfQKADKjAK7jATMP8DZVhSLDOT5c0sXFvgmAH1DFFO5CTnYrzSZpt1l-VYGawPWN96nDl1UyntEc4ZefBEyOF_0ostTx7pDMbDJhFzPuft2pMAj85GObIR9hkU2YGnv9m8-WmSOgN0KfoRM6WERghtBmvT8Tvve_5k1ISNFJN57t8NXXC4KbCEvzt/w497-h243/Screenshot%202024-02-19%20182231.png"
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUTKKMOQcDVhB7FbU3Utn1dy3Vk7zQ9l72d_WeTi5s2d6Abu6GpQf2kDq2LK5vLKHLYFtxQ601XR9Z6tzXsdkQPZNjJlkNxOOlt8W1qsdyg5TyNQ3cmsbYdY5VfknnpJEUoK81xFMIqLDvPXdbeoKXezwpnrdPxdzzmLGeKqZCakFlIVZdkwzvf4bGV8Z9/s1895/Screenshot%202025-03-17%20222420.png"
           alt=""
         />
       </div>
