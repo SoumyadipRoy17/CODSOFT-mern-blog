@@ -13,7 +13,7 @@ function CallToAction() {
           className="rounded-tl-xl rounded-bl-none"
         >
           <a
-            href="https://roys-space-portfolio.vercel.app/"
+            href="https://myroydevportfolio.netlify.app/"
             // href="https://roys-space-portfolio.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
